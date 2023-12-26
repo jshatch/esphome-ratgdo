@@ -26,11 +26,12 @@ esp8266:
   restore_from_flash: true
 
 dashboard_import:
-  package_import_url: github://ratgdo/esphome-ratgdo/v25iboard.yaml@main
+  package_import_url: github://jshatch/esphome-ratgdo/v25iboard.yaml@Switch-Toggle-With-Lock
 
 packages:
   remote_package:
-    url: https://github.com/ratgdo/esphome-ratgdo
+    url: https://github.com/jshatch/esphome-ratgdo
+    ref: Switch-Toggle-With-Lock
     files: [base.yaml]
     refresh: 1s
 

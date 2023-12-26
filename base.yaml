@@ -3,7 +3,8 @@
 external_components:
   - source:
       type: git
-      url: https://github.com/ratgdo/esphome-ratgdo
+      url: https://github.com/jshatch/esphome-ratgdo
+      ref: Switch-Toggle-With-Lock
     refresh: 1s
 
 preferences:
@@ -40,6 +41,14 @@ lock:
     name: "Lock remotes"
 
 switch:
+  - platform: template
+    id: ${id_prefix}_lock_remotes_switch
+    name: "Lock remotes switch"
+    on_turn_on:
+      - lock.lock: ${id_prefix}_lock_remotes
+    on_turn_off:
+      - lock.unlock: ${id_prefix}_lock_remotes
+    optimistic: true
   - platform: gpio
     id: "${id_prefix}_status_door"
     internal: true
